@@ -5,9 +5,9 @@ import (
 	"io/ioutil"
 )
 
-type ResponseCallback func(b []byte, r *http.Response)
+type HttpResponseCallback func(b []byte, r *http.Response)
 
-func GetOrPanic(url string, callback ResponseCallback) {
+func MakeHttpGet(url string, callback HttpResponseCallback) {
 	resp, err := http.Get(url)
 	PanicIfErr(err)
 	defer resp.Body.Close()

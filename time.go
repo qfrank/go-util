@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func Convert2Time(timestampInMills int64) *time.Time {
+func ConvertMills2Time(timestampInMills int64) *time.Time {
 	if timestampInMills <= 0 {
 		return nil
 	}
